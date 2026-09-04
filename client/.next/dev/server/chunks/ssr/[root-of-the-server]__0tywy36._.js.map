@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///home/big_dahn/ticketing/client/pages/index.js"],"sourcesContent":["import React from 'react';\n\nfunction index() {\n  return <div>Landing Page</div>;\n}\n\nexport default index;\n"],"names":["index"],"mappings":";;;;;AAAA;;;AAEA,SAASA;IACP,qBAAO,qKAAC;kBAAI;;;;;;AACd;uCAEeA"}}]
+}
