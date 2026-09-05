@@ -5,8 +5,8 @@ import {
   Subjects,
   OrderStatus,
 } from '@bgticketz/common';
-import { queueGroupName } from './queueGroupName';
-import { Order } from '../../models/order';
+import { queueGroupName } from './queueGroupName.js';
+import { Order } from '../../models/order.js';
 
 export class OrderCancelledListener extends Listener<OrderCancelledEvent> {
   readonly subject = Subjects.OrderCancelled;

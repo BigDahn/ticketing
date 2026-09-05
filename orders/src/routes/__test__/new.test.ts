@@ -1,9 +1,9 @@
 import request from 'supertest';
-import { app } from '../../app';
+import { app } from '../../app.js';
 import mongoose from 'mongoose';
-import { Ticket } from '../../models/ticket';
-import { Order, OrderStatus } from '../../models/order';
-import { natsWrapper } from '../../nats-wrapper';
+import { Ticket } from '../../models/ticket.js';
+import { Order, OrderStatus } from '../../models/order.js';
+import { natsWrapper } from '../../nats-wrapper.js';
 
 it('returns an error if the ticket does not exist', async () => {
   const ticketId = new mongoose.Types.ObjectId();

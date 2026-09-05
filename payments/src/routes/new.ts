@@ -8,11 +8,11 @@ import {
   NotAuthorizedError,
   OrderStatus,
 } from '@bgticketz/common';
-import { Payment } from '../models/payment';
-import { Order } from '../models/order';
-import { stripe } from '../stripe';
-import { PaymentCreatedPublisher } from '../events/publishers/payment-created-listener';
-import { natsWrapper } from '../nats-wrapper';
+import { Payment } from '../models/payment.js';
+import { Order } from '../models/order.js';
+import { stripe } from '../stripe.js';
+import { PaymentCreatedPublisher } from '../events/publishers/payment-created-listener.js';
+import { natsWrapper } from '../nats-wrapper.js';
 const router = express.Router();
 
 router.post(

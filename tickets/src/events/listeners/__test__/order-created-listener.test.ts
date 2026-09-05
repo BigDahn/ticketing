@@ -1,9 +1,11 @@
 import { OrderCreatedEvent, OrderStatus } from '@bgticketz/common';
-import { Ticket } from '../../../models/ticket';
-import { natsWrapper } from '../../../nats-wrapper';
-import { OrderCreatedListener } from '../order-created-listener';
+import { Ticket } from '../../../models/ticket.js';
+import { jest } from '@jest/globals';
+import { natsWrapper } from '../../../nats-wrapper.js';
+import { OrderCreatedListener } from '../order-created-listener.js';
 import mongoose from 'mongoose';
 import { Message } from 'node-nats-streaming';
+import { getPublishedEventData } from './helper.js';
 
 const setup = async () => {
   // create an instance of the listener
@@ -72,9 +74,10 @@ it('publishes a ticket updated event', async () => {
   // console.log(natsWrapper.client.publish.mock.calls);
 
   // or
-  const ticketUpdatedData = JSON.parse(
-    (natsWrapper.client.publish as jest.Mock).mock.calls[0][1],
+
+  const eventData = getPublishedEventData<TicketUpdatedEvent['data']>(
+    natsWrapper.client.publish,
   );
 
-  expect(data.id).toEqual(ticketUpdatedData.orderId);
+  expect(data.id).toEqual(eventData.orderId);
 });

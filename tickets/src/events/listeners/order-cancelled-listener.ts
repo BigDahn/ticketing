@@ -1,8 +1,8 @@
-import { TicketUpdatedPublisher } from './../publishers/ticket-updated-publisher';
+import { TicketUpdatedPublisher } from './../publishers/ticket-updated-publisher.js';
 import { Listener, OrderCancelledEvent, Subjects } from '@bgticketz/common';
-import { queueGroupName } from './queueGroupName';
+import { queueGroupName } from './queueGroupName.js';
 import { Message } from 'node-nats-streaming';
-import { Ticket } from '../../models/ticket';
+import { Ticket } from '../../models/ticket.js';
 
 export class OrderCancelledListener extends Listener<OrderCancelledEvent> {
   readonly subject = Subjects.OrderCancelled;

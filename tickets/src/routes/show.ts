@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { Ticket } from '../models/ticket';
+import { Ticket } from '../models/ticket.js';
 import { NotFoundError } from '@bgticketz/common';
 
 const router = express.Router();

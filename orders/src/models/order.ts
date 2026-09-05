@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { OrderStatus } from '@bgticketz/common';
-import { TicketDoc } from './ticket';
+import { TicketDoc } from './ticket.js';
 import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 
 export { OrderStatus };

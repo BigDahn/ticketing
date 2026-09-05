@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
-import { app } from './app';
-import { natsWrapper } from './nats-wrapper';
-import { OrderCreatedListener } from './events/listeners/order-created-listener';
-import { OrderCancelledListener } from './events/listeners/order-cancelled-listener';
+import { app } from './app.js';
+import { natsWrapper } from './nats-wrapper.js';
+import { OrderCreatedListener } from './events/listeners/order-created-listener.js';
+import { OrderCancelledListener } from './events/listeners/order-cancelled-listener.js';
 
 const start = async () => {
   console.log('Starting up payments service...');
@@ -21,6 +21,9 @@ const start = async () => {
   }
   if (!process.env.NATS_CLUSTER_ID) {
     throw new Error('NATS_CLUSTER_ID must be defined');
+  }
+  if (!process.env.STRIPE_KEY) {
+    throw new Error('STRIPE_KEY must be defined');
   }
   try {
     await natsWrapper.connect(

@@ -1,7 +1,7 @@
 import { Message } from 'node-nats-streaming';
 import { Subjects, Listener, TicketCreatedEvent } from '@bgticketz/common';
-import { Ticket } from '../../models/ticket';
-import { queueGroupName } from './queue-group-name';
+import { Ticket } from '../../models/ticket.js';
+import { queueGroupName } from './queue-group-name.js';
 
 export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
   readonly subject = Subjects.TicketCreated;

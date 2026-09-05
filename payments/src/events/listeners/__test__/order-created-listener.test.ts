@@ -1,9 +1,10 @@
-import { natsWrapper } from '../../../nats-wrapper';
-import { OrderCreatedListener } from '../order-created-listener';
+import { natsWrapper } from '../../../nats-wrapper.js';
+import { OrderCreatedListener } from '../order-created-listener.js';
 import mongoose from 'mongoose';
 import { OrderCreatedEvent, OrderStatus } from '@bgticketz/common';
 import { Message } from 'node-nats-streaming';
-import { Order } from '../../../models/order';
+import { jest } from '@jest/globals';
+import { Order } from '../../../models/order.js';
 
 const setup = async () => {
   // Create an instance of the listener

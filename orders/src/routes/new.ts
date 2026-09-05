@@ -8,10 +8,10 @@ import {
   ValidateRequest,
 } from '@bgticketz/common';
 import { body } from 'express-validator';
-import { Ticket } from '../models/ticket';
-import { Order } from '../models/order';
-import { OrderCreatedPublisher } from '../events/publishers/order-created-publisher';
-import { natsWrapper } from '../nats-wrapper';
+import { Ticket } from '../models/ticket.js';
+import { Order } from '../models/order.js';
+import { OrderCreatedPublisher } from '../events/publishers/order-created-publisher.js';
+import { natsWrapper } from '../nats-wrapper.js';
 
 const router = express.Router();
 

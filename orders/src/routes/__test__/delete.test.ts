@@ -1,9 +1,9 @@
 import request from 'supertest';
-import { app } from '../../app';
-import { Ticket } from '../../models/ticket';
+import { app } from '../../app.js';
+import { Ticket } from '../../models/ticket.js';
 import mongoose from 'mongoose';
-import { Order, OrderStatus } from '../../models/order';
-import { natsWrapper } from '../../nats-wrapper';
+import { Order, OrderStatus } from '../../models/order.js';
+import { natsWrapper } from '../../nats-wrapper.js';
 
 it('marks an order as cancelled', async () => {
   // Create a ticket with Ticket Model

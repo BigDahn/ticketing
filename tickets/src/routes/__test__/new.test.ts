@@ -1,7 +1,7 @@
 import request from 'supertest';
-import { app } from '../../app';
-import { Ticket } from '../../models/ticket';
-import { natsWrapper } from '../../nats-wrapper';
+import { app } from '../../app.js';
+import { Ticket } from '../../models/ticket.js';
+import { natsWrapper } from '../../nats-wrapper.js';
 
 it('has a route handler listening to /api/tickets for post requests', async () => {
   const response = await request(app).post('/api/tickets').send({});

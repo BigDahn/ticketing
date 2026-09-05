@@ -4,10 +4,10 @@ import {
   OrderStatus,
   Subjects,
 } from '@bgticketz/common';
-import { queueGroupName } from './queue-group-name';
+import { queueGroupName } from './queue-group-name.js';
 import { Message } from 'node-nats-streaming';
-import { Order } from '../../models/order';
-import { OrderCancelledPublisher } from '../publishers/order-cancelled-publisher';
+import { Order } from '../../models/order.js';
+import { OrderCancelledPublisher } from '../publishers/order-cancelled-publisher.js';
 
 export class ExpirationCompleteListener extends Listener<ExpirationCompleteEvent> {
   queueGroupName = queueGroupName;

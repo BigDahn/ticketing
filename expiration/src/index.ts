@@ -1,5 +1,5 @@
-import { OrderCreatedListener } from './events/listeners/order-created-listener';
-import { natsWrapper } from './nats-wrapper';
+import { OrderCreatedListener } from './events/listeners/order-created-listener.js';
+import { natsWrapper } from './nats-wrapper.js';
 
 const start = async () => {
   if (!process.env.NATS_CLIENT_ID) {

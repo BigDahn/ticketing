@@ -4,9 +4,9 @@ import {
   requireAuth,
 } from '@bgticketz/common';
 import express, { Request, Response } from 'express';
-import { Order, OrderStatus } from '../models/order';
-import { OrderCancelledPublisher } from '../events/publishers/order-cancelled-publisher';
-import { natsWrapper } from '../nats-wrapper';
+import { Order, OrderStatus } from '../models/order.js';
+import { OrderCancelledPublisher } from '../events/publishers/order-cancelled-publisher.js';
+import { natsWrapper } from '../nats-wrapper.js';
 
 const router = express.Router();
 
