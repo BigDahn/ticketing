@@ -1,8 +1,8 @@
 import request from 'supertest';
-import { app } from '../../app';
+import { app } from '../../app.js';
 import mongoose from 'mongoose';
-import { natsWrapper } from '../../nats-wrapper';
-import { Ticket } from '../../models/ticket';
+import { natsWrapper } from '../../nats-wrapper.js';
+import { Ticket } from '../../models/ticket.js';
 
 it('returns a 404 if the provided id does not exist', async () => {
   const id = new mongoose.Types.ObjectId().toHexString();

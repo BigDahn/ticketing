@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
-import { Ticket } from '../../../models/ticket';
-import { natsWrapper } from '../../../nats-wrapper';
-import { OrderCancelledListener } from '../order-cancelled-listener';
+import { jest } from '@jest/globals';
+import { Ticket } from '../../../models/ticket.js';
+import { natsWrapper } from '../../../nats-wrapper.js';
+import { OrderCancelledListener } from '../order-cancelled-listener.js';
 import { OrderCancelledEvent } from '@bgticketz/common';
 import { Message } from 'node-nats-streaming';
 

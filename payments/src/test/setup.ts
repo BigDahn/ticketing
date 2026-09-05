@@ -1,19 +1,19 @@
+import { jest } from '@jest/globals';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import request from 'supertest';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
-import { app } from '../app';
+import { app } from '../app.js';
 
 declare global {
   var signin: (id?: string) => string[];
 }
 
-jest.mock('../nats-wrapper');
-
 let mongo: any;
 
 beforeAll(async () => {
   process.env.JWT_KEY = 'asdf';
+  process.env.STRIPE_KEY = 'saskkjs';
   mongo = await MongoMemoryServer.create();
   const mongoUri = mongo.getUri();
 

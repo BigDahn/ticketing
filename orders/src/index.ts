@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
-import { app } from './app';
-import { natsWrapper } from './nats-wrapper';
-import { TicketCreatedListener } from './events/listeners/ticket-created-listener';
-import { TicketUpdatedListener } from './events/listeners/ticket-updated-listener';
-import { ExpirationCompleteListener } from './events/listeners/expiration-complete-listener';
-import { PaymentCreatedListener } from './events/listeners/payment-created-listener';
+import { app } from './app.js';
+import { natsWrapper } from './nats-wrapper.js';
+import { TicketCreatedListener } from './events/listeners/ticket-created-listener.js';
+import { TicketUpdatedListener } from './events/listeners/ticket-updated-listener.js';
+import { ExpirationCompleteListener } from './events/listeners/expiration-complete-listener.js';
+import { PaymentCreatedListener } from './events/listeners/payment-created-listener.js';
 
 const start = async () => {
   console.log('Starting up orders service...');

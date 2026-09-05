@@ -1,9 +1,10 @@
 import { TicketCreatedEvent } from '@bgticketz/common';
 import mongoose from 'mongoose';
-import { TicketCreatedListener } from '../ticket-created-listener';
-import { natsWrapper } from '../../../nats-wrapper';
+import { TicketCreatedListener } from '../ticket-created-listener.js';
+import { natsWrapper } from '../../../nats-wrapper.js';
 import { Message } from 'node-nats-streaming';
-import { Ticket } from '../../../models/ticket';
+import { jest } from '@jest/globals';
+import { Ticket } from '../../../models/ticket.js';
 
 const setup = async () => {
   // create an instance of the listener

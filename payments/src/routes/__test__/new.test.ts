@@ -1,11 +1,10 @@
 import request from 'supertest';
-import { app } from '../../app';
+import { app } from '../../app.js';
 import mongoose from 'mongoose';
-import { Order } from '../../models/order';
-import { Payment } from '../../models/payment';
+import { Order } from '../../models/order.js';
+import { Payment } from '../../models/payment.js';
 import { OrderStatus } from '@bgticketz/common';
-import { stripe } from '../../stripe';
-jest.mock('../../stripe');
+import { stripe } from '../../stripe.js';
 
 it('returns a 404 when purchasing an order that does not exist', async () => {
   await request(app)

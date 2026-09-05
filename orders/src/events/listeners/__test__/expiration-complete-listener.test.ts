@@ -1,10 +1,16 @@
 import mongoose from 'mongoose';
-import { Order } from '../../../models/order';
-import { Ticket } from '../../../models/ticket';
-import { natsWrapper } from '../../../nats-wrapper';
-import { ExpirationCompleteEvent, OrderStatus } from '@bgticketz/common';
-import { ExpirationCompleteListener } from '../expiration-complete-listener';
+import { Order } from '../../../models/order.js';
+import { jest } from '@jest/globals';
+import { Ticket } from '../../../models/ticket.js';
+import { natsWrapper } from '../../../nats-wrapper.js';
+import {
+  ExpirationCompleteEvent,
+  OrderCancelledEvent,
+  OrderStatus,
+} from '@bgticketz/common';
+import { ExpirationCompleteListener } from '../expiration-complete-listener.js';
 import { Message } from 'node-nats-streaming';
+import { getPublishedEventData } from './helper.js';
 
 const setup = async () => {
   const listener = new ExpirationCompleteListener(natsWrapper.client);
@@ -61,8 +67,8 @@ it('emits an order cancelled event', async () => {
 
   expect(natsWrapper.client.publish).toHaveBeenCalled();
 
-  const eventData = JSON.parse(
-    (natsWrapper.client.publish as jest.Mock).mock.calls[0][1],
+  const eventData = getPublishedEventData<OrderCancelledEvent['data']>(
+    natsWrapper.client.publish,
   );
 
   expect(eventData.id).toEqual(order.id);

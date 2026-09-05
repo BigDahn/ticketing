@@ -1,7 +1,7 @@
 import { Listener, OrderCreatedEvent, Subjects } from '@bgticketz/common';
-import { queueGroupName } from './queueGroupName';
+import { queueGroupName } from './queueGroupName.js';
 import { Message } from 'node-nats-streaming';
-import { expirationQueue } from '../../queues/expiration-queue';
+import { expirationQueue } from '../../queues/expiration-queue.js';
 
 export class OrderCreatedListener extends Listener<OrderCreatedEvent> {
   readonly subject = Subjects.OrderCreated;

@@ -1,4 +1,4 @@
-import { Ticket } from '../ticket';
+import { Ticket } from '../ticket.js';
 
 it('implements optimistic concurrency control', async () => {
   // create an instance of a ticket

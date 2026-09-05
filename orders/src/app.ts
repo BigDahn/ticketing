@@ -4,10 +4,10 @@ import { errorHandler, NotFoundError, currentUser } from '@bgticketz/common';
 
 import cookieSession from 'cookie-session';
 
-import { deleteOrderRouter } from './routes/delete';
-import { newOrderRouter } from './routes/new';
-import { indexOrderRouter } from './routes/index';
-import { showOrderRouter } from './routes/show';
+import { deleteOrderRouter } from './routes/delete.js';
+import { newOrderRouter } from './routes/new.js';
+import { indexOrderRouter } from './routes/index.js';
+import { showOrderRouter } from './routes/show.js';
 
 const app = express();
 app.set('trust proxy', true);

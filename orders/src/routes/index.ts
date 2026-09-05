@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { requireAuth } from '@bgticketz/common';
-import { Order } from '../models/order';
+import { Order } from '../models/order.js';
 
 const router = express.Router();
 

@@ -1,7 +1,7 @@
 import express from 'express';
 import 'express-async-errors';
 import { errorHandler, NotFoundError, currentUser } from '@bgticketz/common';
-import { createChargeRouter } from './routes/new';
+import { createChargeRouter } from './routes/new.js';
 
 import cookieSession from 'cookie-session';
 

@@ -3,10 +3,10 @@ import 'express-async-errors';
 import { errorHandler, NotFoundError, currentUser } from '@bgticketz/common';
 
 import cookieSession from 'cookie-session';
-import { createTicketRouter } from './routes/new';
-import { showTicketRouter } from './routes/show';
-import { indexTicketRouter } from './routes/index';
-import { updateTicketRouter } from './routes/update';
+import { createTicketRouter } from './routes/new.js';
+import { showTicketRouter } from './routes/show.js';
+import { indexTicketRouter } from './routes/index.js';
+import { updateTicketRouter } from './routes/update.js';
 
 const app = express();
 app.set('trust proxy', true);
